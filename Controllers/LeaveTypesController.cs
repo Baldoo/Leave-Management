@@ -6,11 +6,13 @@ using AutoMapper;
 using Leave_Management.Contracts;
 using Leave_Management.Data;
 using Leave_Management.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Leave_Management.Controllers
 {
+    [Authorize(Roles = "Administrator")] //Agerga autorización para todas las acciones del controlador y si se le agrega un parámetro, se puede definir una política o un rol
     public class LeaveTypesController : Controller
     {
         private readonly ILeaveTypeRepository _repo;
@@ -21,7 +23,7 @@ namespace Leave_Management.Controllers
             _repo = repo;
             _mapper = mapper;   
         }
-
+        //[Authorize] //Agrega autenticación para la acción a la que se le puso
         // GET: LeaveTypes
         public ActionResult Index()
         {
