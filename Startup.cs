@@ -42,7 +42,7 @@ namespace Leave_Management
             services.AddScoped<ILeaveHistoryRepository, LeaveHistoryRepository>();
             services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();
 
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddDefaultIdentity<Employee>()
                 .AddRoles<IdentityRole>() //Agrega la opción de añadir roles en los usuarios
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
@@ -54,7 +54,7 @@ namespace Leave_Management
         public void Configure(
             IApplicationBuilder app, 
             IWebHostEnvironment env,
-            UserManager<IdentityUser> userManager,
+            UserManager<Employee> userManager,
             RoleManager<IdentityRole> roleManager
             )
         {
