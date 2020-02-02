@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Leave Allocations</h1>
 
 <table class="table">
     <thead>
@@ -23,7 +23,7 @@
             </td>
             <td>
                 @*@Html.ActionLink("Allocate To Employees", "SetLeave", new { id = item.Id })*@
-                <a class="btn btn-outline-success" asp-action="SetLeave" asp-route-id="@item.Id"><i class="fa fa-pencil" aria-hidden="true"></i> Allocate To Employees</a>
+                <a class="btn btn-outline-success" asp-action="SetLeave" asp-route-id="@item.Id"><i class="fas fa-user-edit" aria-hidden="true"></i> Allocate To Employees</a>
             </td>
         </tr>
 }
